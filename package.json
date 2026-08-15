@@ -1,21 +1,32 @@
 {
-  "name": "smartcart-frontend",
-  "private": true,
-  "version": "1.0.0",
+  "name": "smartcart-backend",
+  "version": "2.0.0",
+  "description": "SmartCart Eswatini Multi-Vendor Marketplace",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "migrate": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "test": "node tests/regression.js",
+    "typecheck": "echo 'Add JSDoc/TS checking later'"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^8.0.0",
+    "joi": "^17.13.3",
+    "knex": "^3.1.0",
+    "pg": "^8.13.0",
+    "socket.io": "^4.8.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.0"
+    "@vitejs/plugin-react": "^6.0.5",
+    "vite": "^8.2.1"
   }
 }
